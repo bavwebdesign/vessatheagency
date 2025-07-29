@@ -95,6 +95,20 @@
 
     e.stopPropagation();
   });
+
+  item.addEventListener('touchstart', (e) => {
+    const img = item.querySelector('img');
+    const title = item.querySelector('.overlay h3').textContent;
+    const desc = item.querySelector('.overlay p').textContent;
+
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    lightboxCaptionTitle.textContent = title;
+    lightboxCaptionText.textContent = desc;
+    lightbox.style.display = 'flex';
+
+    e.stopPropagation();
+  });
 });
 
   lightbox.addEventListener('click', () => {
