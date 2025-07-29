@@ -80,21 +80,22 @@
   const portfolioItems = document.querySelectorAll('.portfolio-item');
 
   portfolioItems.forEach(item => {
+  item.style.cursor = 'pointer';
+
+  item.addEventListener('click', (e) => {
     const img = item.querySelector('img');
     const title = item.querySelector('.overlay h3').textContent;
     const desc = item.querySelector('.overlay p').textContent;
 
-    img.style.cursor = 'pointer';
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    lightboxCaptionTitle.textContent = title;
+    lightboxCaptionText.textContent = desc;
+    lightbox.style.display = 'flex';
 
-    img.addEventListener('click', (e) => {
-      lightboxImg.src = img.src;
-      lightboxImg.alt = img.alt;
-      lightboxCaptionTitle.textContent = title;
-      lightboxCaptionText.textContent = desc;
-      lightbox.style.display = 'flex';
-      e.stopPropagation(); // să nu se închidă lightbox la click pe imagine
-    });
+    e.stopPropagation();
   });
+});
 
   lightbox.addEventListener('click', () => {
     lightbox.style.display = 'none';
