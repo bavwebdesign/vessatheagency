@@ -4349,6 +4349,14 @@ textarea::placeholder {
 						margin: 0;
 						padding: 0;
 					}
+
+		.portfolio-item {
+  position: relative; /* asigură poziționarea corectă */
+}
+
+.portfolio-item .overlay {
+  pointer-events: none; /* permite click-ul să treacă prin overlay */
+}
 					
 					
 
