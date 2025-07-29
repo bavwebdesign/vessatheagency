@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<!--
+	Landed by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Portofoliu</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+			<header id="header">
+				<h1 id="logo"><a href="index.html">Vessa.TheAgency</a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">Acasă</a></li>
+          <li><a href="portofoliu.html">Portofoliu</a></li>
+          <li><a href="servicii.html">Servicii</a></li>
+          <li><a href="contact.html">Contact</a></li>
+					</ul>
+				</nav>
+			</header>
+
+			<!-- Main -->
+			<div id="main" class="wrapper style1">
+  <div class="container">
+    <header class="major">
+      <h2>Portofoliu</h2>
+      <p>Colaborări care generează impact.</p>
+    </header>
+
+    <section class="portfolio-grid">
+      <article class="portfolio-item">
+        <img src="images/FlorariaLG.jpg" alt="Florăria L&G Domnești" />
+        <div class="overlay">
+          <h3>Florăria L&G Domnești</h3>
+          <p>Eleganță florală & prezență digitală de impact.</p>
+        </div>
+      </article>
+      <article class="portfolio-item">
+        <img src="images/livisa.jpg" alt="Livisa" />
+        <div class="overlay">
+          <h3>Livisa</h3>
+          <p>Eleganță pură. Colecții vestimentare artizanale promovate online.</p>
+        </div>
+      </article>
+      <article class="portfolio-item">
+        <img src="images/lotusacademy.jpg" alt="Lotus Kids Academy" />
+        <div class="overlay">
+          <h3>Lotus Kids Academy</h3>
+          <p>Educație cu suflet, promovată prin povești vizuale calde.</p>
+        </div>
+      </article>
+    </section>
+  </div>
+</div>
+<!-- Lightbox container -->
+<div id="lightbox" style="display:none; position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.9);justify-content:center;align-items:center;flex-direction: column; z-index:9999; cursor:pointer; padding: 1rem; box-sizing: border-box;">
+  <img id="lightbox-img" src="" alt="" style="max-width:90vw; max-height:70vh; border-radius:12px; box-shadow:0 0 15px rgba(255,255,255,0.7); margin-bottom: 1rem;">
+  <div id="lightbox-caption" style="color: white; text-align:center; max-width: 90vw;">
+    <h3 style="margin: 0 0 0.5rem 0;"></h3>
+    <p style="margin: 0; font-size: 1rem;"></p>
+  </div>
+</div>
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxCaption = document.getElementById('lightbox-caption');
+  const lightboxCaptionTitle = lightboxCaption.querySelector('h3');
+  const lightboxCaptionText = lightboxCaption.querySelector('p');
+
+  const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+  portfolioItems.forEach(item => {
+    const img = item.querySelector('img');
+    const title = item.querySelector('.overlay h3').textContent;
+    const desc = item.querySelector('.overlay p').textContent;
+
+    img.style.cursor = 'pointer';
+
+    img.addEventListener('click', (e) => {
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightboxCaptionTitle.textContent = title;
+      lightboxCaptionText.textContent = desc;
+      lightbox.style.display = 'flex';
+      e.stopPropagation(); // să nu se închidă lightbox la click pe imagine
+    });
+  });
+
+  lightbox.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+    lightboxImg.src = '';
+    lightboxImg.alt = '';
+    lightboxCaptionTitle.textContent = '';
+    lightboxCaptionText.textContent = '';
+  });
+</script>
+
+			<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="https://facebook.com/61573696546262/" class="icon brands alt fa-facebook-f" target="_blank"><span class="label">Facebook</span></a></li>
+					<li><a href="https://instagram.com/vessa.theagency" class="icon brands alt fa-instagram" target="_blank"><span class="label">Instagram</span></a></li>
+					<li><a href="mailto:vessatheagency@yahoo.com" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; BAVWebDesign. All rights reserved.</li>
+				</ul>
+			</footer>
+
+		</div>
+
+		
+
+	</body>
+</html>
